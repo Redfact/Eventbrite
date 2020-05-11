@@ -2,4 +2,10 @@ class User < ApplicationRecord
 	has_many :participations
 	has_many :eventsParticipated , through: :participations , source: :event
 	has_many :events
+
+	after_create :welcome_send
+
+	def welcome_send
+		UserMailer.welcome_email(self).deliver_now
+	end
 end
