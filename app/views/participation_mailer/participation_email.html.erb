@@ -4,12 +4,26 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Bonjour <%= @user.name %>!</h1>
+    <h1>Inscription à un event</h1>
+    <h3>Bonjour <%= @participation.user.first_name%>!</h3>
     <p>
-      Tu t'es inscrit à un evenement en utilisant l'e-mail suivant : <%= @user.email %>.
+      Nous confirmons votre participation à l'évenement : <%=@event.title%>
     </p>
+    </br>
+    <h3>Informations sur l'evement :</h3>
+    <pre>
+       Adresse : <%=@event.location%>
+       Date : <%=@event.start_date%>
+       Durée : <%=@event.duration%> minutes
+       Prix : <%=@event.price%>
+       Description : 
+          <%=@event.description%>
+     </pre>
+    </br>
+    </br>
     <p>
-      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+      Pour accéder à ton espace client, connecte-toi via : 
+      <a href="<%= @url %>">https://eventbritetantely.herokuapp.com/</a>.
     </p>
     <p> À très vite sur Eventbrite !
   </body>
