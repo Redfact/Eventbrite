@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'users_controller/view'
+  get 'events_controller/index'
   get 'static_pages/index'
-  get 'static_pages/secret'
   devise_for :users
-	 root to: "static_pages#index"
+  root to: "events_controller#index"
+
+  resources :users, only: [:view]
 end

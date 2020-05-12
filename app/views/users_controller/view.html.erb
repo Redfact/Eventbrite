@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profil user</title>
+</head>
+<body>
+	<h1>Vos informations</h1>
+	<p>Email : <%= current_user.email %></p>
+	<p>Nom : <%= current_user.last_name%></p>
+	<p>Prenom : <%= current_user.first_name%></p>
+	<p>Description : <%= current_user.description%> </p>
+	<p></p>
+	<p><%=link_to "Modifier mon profil",edit_user_registration_path%></p>
+</body>
+</html>
