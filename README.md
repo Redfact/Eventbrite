@@ -1,4 +1,9 @@
-# EventBrite par Randria Tantely
+## EventBrite par Randria Tantely
+
+# Fonctionalités:
+-Creation/modification de compte.
+-Creation d'event.
+-affichage d'event.
 
 # Site disponible sur le liens ci dessous : 
 https://eventbritetantely.herokuapp.com/
