@@ -2,7 +2,9 @@
 
 # Fonctionalités:
 -Creation/modification de compte.
+
 -Creation d'event.
+
 -affichage d'event.
 
 # Site disponible sur le liens ci dessous : 
