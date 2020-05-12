@@ -1,24 +1,6 @@
-# README
+# EventBrite par Randria Tantely
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Site disponible sur le liens ci dessous : 
+https://eventbritetantely.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+PS : Il se peut que lors de l'inscription vous ne receviez pas le mail de confirmation !
