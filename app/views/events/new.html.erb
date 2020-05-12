@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creer evenement</title>
+</head>
+<body>
+	<h1>Creation d'évenement</h1>
+<div class="row justify-content-center">
+    	<dir>
+	    	<%= form_tag events_path(action: 'create'), method: "post" do %>
+
+	      <%= label_tag "Titre" %>
+	      <br />
+	      <%= text_field_tag 'title', params[:title] %>
+	      <br /> <br />
+
+	      <%= label_tag "Date de l'evenement" %>
+	      <br />
+	      <%=date_field("event", "start_date", min: Date.today)%>	      
+	      <br /> <br />
+
+	      <%= label_tag 'Durée' %>
+	      <br />
+	      <%= number_field_tag 'duration',params[:duration] %>
+	      <br /> <br />      
+
+	      <%= label_tag 'Description' %>
+	      <br />
+	      <%= text_area_tag 'description',params[:duration] ,:rows=>5, :cols=>60 %>
+	      <br /> <br />
+
+	      <%= label_tag 'Prix' %>
+	      <br />
+	      <%= number_field_tag 'price',params[:price] %>
+	      <br /> <br />
+
+	      <%= label_tag "Lieu" %>
+	      <br />
+	      <%= text_field_tag 'location', params[:location] %>
+	      <br /> <br />
+
+	      <%= submit_tag "Creer event" %>
+
+	    	<% end %>
+    	</dir>
+
+    </div>
+
+</body>
+</html>

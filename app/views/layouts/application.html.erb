@@ -14,7 +14,7 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">EventBrite</a>
+          <%=link_to"EventBrite",root_path ,class:"navbar-brand" %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -22,11 +22,11 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <%=link_to"Home",root_path ,class:"nav-link" %>
               </li>
               <%if user_signed_in?%>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Creer évenement</a>
+                <%=link_to "Creer une évenement",new_event_path,class:"nav-link"%>
               </li>
               <%end%>
               <li class="nav-item dropdown">
@@ -41,7 +41,7 @@
                   <%else %>
                     <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete,class:"dropdown-item" %>
                     <div class="dropdown-divider"></div>
-                    <%= link_to "Profil", users_controller_view_path ,class:"dropdown-item" %>
+                    <%= link_to "Profil",  users_controller_path(id:current_user.id),class:"dropdown-item" %>
                   <%end%>
                 </div>
               </li>

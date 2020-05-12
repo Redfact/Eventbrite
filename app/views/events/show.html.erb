@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details de l'event</title>
+</head>
+<body>
+<div class="card border-success mb-0" >
+  <div class="card-header bg-transparent border-success text-success">prix : <%=@event.price%> €</div>
+  <div class="card-body ">
+    <h2 class="card-title"><%=@event.title%></h2>
+    <p class="card-text"><%=@event.description%></p>
+  </div>
+  <div class="card-footer bg-transparent border-success">
+  	
+  	<p>Le <%=@event.start_date.day%> <%=@event.start_date.strftime('%B')%>  <%=@event.start_date.year%> </p>
+  	<p> Contact :  <%=link_to @event.admin.email," "%></p>
+  	</div>
+</div>
+</body>
+</html>

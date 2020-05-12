@@ -1,4 +1,6 @@
 class UsersControllerController < ApplicationController
-  def view
+  def show
   end
+  	
+
 end
