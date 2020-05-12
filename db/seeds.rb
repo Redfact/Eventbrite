@@ -10,9 +10,7 @@
 require 'faker'
 
 User.all.destroy_all
-Tag.all.destroy_all
-City.all.destroy_all
-Gossip.all.destroy_all
+
 
 
 10.times do

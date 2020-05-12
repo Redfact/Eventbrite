@@ -12,7 +12,9 @@
   </div>
   <div class="card-footer bg-transparent border-success">
   	
-  	<p>Le <%=@event.start_date.day%> <%=@event.start_date.strftime('%B')%>  <%=@event.start_date.year%> </p>
+  	<p>Le <%=@event.start_date.strftime('%a %d %b %Y ') %>  à <%=@event.location%> </p>
+  	<p>A partir de <%=@event.start_date.strftime('%Hh%M') %> jusqu'à <%=@event.end_date.strftime('%Hh%M') %>  </p>
+  	<p>Nombre de participants : <%=@event.users.size%></p>
   	<p> Contact :  <%=link_to @event.admin.email," "%></p>
   	</div>
 </div>
