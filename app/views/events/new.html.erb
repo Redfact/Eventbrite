@@ -16,22 +16,22 @@
 
 	      <%= label_tag "Date de l'evenement" %>
 	      <br />
-	      <%=date_field("event", "start_date", min: Date.today)%>	      
+	      <%=date_field("event", "start_date", min: Date.today, default: Date.today)%>	      
 	      <br /> <br />
 
 	      <%= label_tag 'Durée' %>
 	      <br />
-	      <%= number_field_tag 'duration',params[:duration] %>
+	      <%= number_field_tag 'duration',0 %>
 	      <br /> <br />      
 
 	      <%= label_tag 'Description' %>
 	      <br />
-	      <%= text_area_tag 'description',params[:duration] ,:rows=>5, :cols=>60 %>
+	      <%= text_area_tag 'description',"Une description",:rows=>5, :cols=>60 %>
 	      <br /> <br />
 
 	      <%= label_tag 'Prix' %>
 	      <br />
-	      <%= number_field_tag 'price',params[:price] %>
+	      <%= number_field_tag 'price',1 %>
 	      <br /> <br />
 
 	      <%= label_tag "Lieu" %>
@@ -45,6 +45,23 @@
     	</dir>
 
     </div>
+<% if @state == false  %>
+	    <div class="row justify-content-center "style="padding-top: 1cm;">
+			<div class="card card text-white bg-danger mb-3" style="width: 30cm;">
+			<div class="card-header text-uppercase font-weight-bold">
+			Attention erreur de saisis !
+			</div>
+			<div class="card-body">
+			  <p>Nous n'avons pas réussi à creer l'event pour la (ou les) raison(s) suivante(s) :</p>
+			  <ul>
+			    <% @event.errors.full_messages.each do |message| %>
+			      <li><%= message %></li>
+			    <% end %>
+			  </ul>
+			</div>
+			</div>
+		</div>
+	<% end %>
 
 </body>
 </html>

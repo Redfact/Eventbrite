@@ -22,23 +22,31 @@ class Event < ApplicationRecord
 
 		validates :price , 
 			presence:true,
-			numericality: {greater_than: 1,less_than: 1000}	
+			numericality: {greater_than: 0,less_than: 1000}	
 
 		validates :location , 
 			presence:true
 
 
 
-	def isEventNotPast()
+	def isEventNotPast()	
+		if(!self.nil?)then
 		return start_date > Date.today
+		else return false	
+		end
 	end
 
 	def durationMultipleFive()
-		return (duration%5) == 0		
+		if(self.nil?)then
+		return 	duration.modulo(5) == 0
+		else return false
+		end
 	end
 
 	def end_date
+		if(self !=nil)
 		return start_date + duration*60 
+		end
+		return 0
 	end
-
 end

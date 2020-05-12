@@ -5,7 +5,7 @@
 </head>
 <body>
 	<%@events.each{|event|%>
-	<div class="card" style="width: 18rem;">
+	<div class="card">
 	  	<div class="card-body">
 		    <h5 class="card-title"><%=event.title%></h5>
 		    <%= link_to "Plus de détails",event_path(id:event.id),class:"card-link"%>
