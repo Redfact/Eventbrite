@@ -4,9 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%= @user.name %> et bienvenue chez nous !</h1>
+    <h1>Confirmation inscription</h1>
+    <h3>Salut <%= @user.first_name %> et bienvenue chez nous !</h3>
     <p>
-      Tu t'es inscrit sur monsite.fr en utilisant l'e-mail suivant : <%= @user.email %>.
+      Tu t'es inscrit sur mon site EventBrite en utilisant l'e-mail suivant : <%= @user.email %>.
     </p>
     <p>
       Pour accéder à ton espace client, connecte-toi via : <%= @url %>.

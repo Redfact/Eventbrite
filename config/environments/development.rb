@@ -60,6 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.perform_deliveries = true
+
   ActionMailer::Base.smtp_settings = {
   :user_name => ENV['SENDGRID_LOGIN'],
   :password => ENV['SENDGRID_PWD'],
@@ -68,4 +69,5 @@ Rails.application.configure do
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
+  }
 end
