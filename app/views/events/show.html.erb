@@ -5,7 +5,15 @@
 </head>
 <body>
 <div class="card border-success mb-0" >
-  <div class="card-header bg-transparent border-success text-success">prix : <%=@event.price%> €</div>
+  <div class="card-header bg-transparent border-success text-success">
+    <%if(@alreadySuscribed) then%>
+    Vous etes déja inscrit !
+    <%elsif (!@isMyevent) %>
+    <%=link_to "Participer",new_charge_path%>
+    <%end%>
+
+    <br><br>
+    prix : <%=@event.price%> €</div>
   <div class="card-body ">
     <h2 class="card-title"><%=@event.title%></h2>
     <p class="card-text"><%=@event.description%></p>

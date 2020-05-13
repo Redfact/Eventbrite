@@ -28,7 +28,6 @@ class Event < ApplicationRecord
 			presence:true
 
 
-
 	def isEventNotPast()	
 		if(!self.nil?)then
 		return start_date > Date.today

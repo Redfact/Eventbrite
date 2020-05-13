@@ -6,7 +6,7 @@ class User < ApplicationRecord
          
 	has_many :participations
 	has_many :eventsParticipated , through: :participations , source: :event
-	has_many :events
+	has_many :events ,foreign_key: "admin_id"
 
 	after_create :welcome_send
 

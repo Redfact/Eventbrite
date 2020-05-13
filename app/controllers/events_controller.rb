@@ -9,6 +9,10 @@ class EventsController < ApplicationController
 
   def show
   	@event = Event.find(params[:id])
+  	if(user_signed_in?)then
+	  	@isMyevent = isMyevent?(@event.id)
+	  	@alreadySuscribed = alreadySuscribed?(@event.id)
+  	end
   end
 
   def create
@@ -35,5 +39,13 @@ class EventsController < ApplicationController
 		  		puts @event.errors.full_messages
 		  		render :new
 		    end
+  	end
+
+  	def isMyevent?(id)
+  		return current_user.events.ids.include?(id)
+  	end
+
+  	def alreadySuscribed?(id)
+  		return current_user.eventsParticipated.ids.include?(id)
   	end
 end
