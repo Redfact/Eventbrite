@@ -11,5 +11,4 @@ class UsersControllerController < ApplicationController
   	puts "Controller User show"
   end
   	
-
 end
