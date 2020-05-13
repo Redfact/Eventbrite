@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :users_controller, only: [:show]
   resources :events
+  resources :charges
+  
 end
