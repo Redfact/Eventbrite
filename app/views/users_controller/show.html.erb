@@ -4,24 +4,35 @@
 	<title>Profil user</title>
 </head>
 <body>
-	<h1>Vos informations</h1>
-	<%if @user.avatar.attached?%>
-	  <%= image_tag @user.avatar, alt: 'avatar' %>
-	<%else%>
-	  <p>=== Il n'y a pas encore de photo de profile lié à cet utilisateur ! ===</p>
-	<%end%>
-	<p>Email : <%= current_user.email %></p>
-	<p>Nom : <%= current_user.last_name%></p>
-	<p>Prenom : <%= current_user.first_name%></p>
-	<p>Description : <%= current_user.description%> </p>
-	<p></p>
-	<p><%=link_to "Modifier mon profil",edit_user_registration_path%></p>
+	<dir>
 
-	<h3>Changer de photo  ?</h3>
-	<%= form_tag users_controller_avatars_path(@user), multipart: true do %>
-	  <%= file_field_tag :avatar %>
-	  <%= submit_tag "mettre à jour" %>
-	<% end %>
+	</dir>
+
+	<div class="row">
+
+		<%if @user.avatar.attached?%>
+			<div class="col-lg-6 ">
+			<dir class="w-50 float-right" style="height: 100px"><%= image_tag @user.avatar, alt: 'avatar', class:"img-fluid rounded mb-4 " %></dir>
+			</div> 
+		<%else%>
+		  <p>=== Il n'y a pas encore de photo de profile lié à cet utilisateur ! ===</p>
+		<%end%>
+
+      <div class="col-lg-6">
+      	<h1>Vos informations</h1>
+      	<p>Email : <%= current_user.email %></p>
+      	<p>Nom : <%= current_user.last_name%></p>
+      	<p>Prenom : <%= current_user.first_name%></p>
+      	<p>Description : <%= current_user.description%> </p>
+      	<p></p>
+      	<p><%=link_to "Modifier mon profil",edit_user_registration_path%></p>
+      	<h3>Changer de photo  ?</h3>
+      	<%= form_tag users_controller_avatars_path(@user), multipart: true do %>
+      	  <%= file_field_tag :avatar %>
+      	  <%= submit_tag "mettre à jour" ,class:"btn btn-outline-dark" %>
+      	<% end %>
+      </div>
+    </div>
 
 </body>
 </html>
