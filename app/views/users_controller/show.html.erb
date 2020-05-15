@@ -5,11 +5,23 @@
 </head>
 <body>
 	<h1>Vos informations</h1>
+	<%if @user.avatar.attached?%>
+	  <%= image_tag @user.avatar, alt: 'avatar' %>
+	<%else%>
+	  <p>=== Il n'y a pas encore de photo de profile lié à cet utilisateur ! ===</p>
+	<%end%>
 	<p>Email : <%= current_user.email %></p>
 	<p>Nom : <%= current_user.last_name%></p>
 	<p>Prenom : <%= current_user.first_name%></p>
 	<p>Description : <%= current_user.description%> </p>
 	<p></p>
 	<p><%=link_to "Modifier mon profil",edit_user_registration_path%></p>
+
+	<h3>Changer de photo  ?</h3>
+	<%= form_tag users_controller_avatars_path(@user), multipart: true do %>
+	  <%= file_field_tag :avatar %>
+	  <%= submit_tag "mettre à jour" %>
+	<% end %>
+
 </body>
 </html>

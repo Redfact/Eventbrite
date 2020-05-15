@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
+    has_one_attached :avatar
 	has_many :participations
 	has_many :eventsParticipated , through: :participations , source: :event
 	has_many :events ,foreign_key: "admin_id"
